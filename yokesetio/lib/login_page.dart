@@ -5,16 +5,41 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const TextStyle textStyle =
+        TextStyle(color: Color.fromARGB(255, 253, 190, 0));
     return Scaffold(
-        body: Column(
-          children: [
-            SizedBox(
-              width: double.maxFinite,
-              child:
-                  ElevatedButton(onPressed: () {}, child: const Text("Login")),
+        body: Container(
+          color: Colors.greenAccent,
+          child: SizedBox(
+            width: double.infinity,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                ElevatedButton(onPressed: () {}, child: const Text("Login")),
+                Divider(
+                  height: 100,
+                  color: Colors.green.shade200,
+                ),
+                SizedBox(
+                    height: 100,
+                    width: 100,
+                    child: Container(
+                      color: Colors.blue.shade300,
+                      child: const Center(
+                          child: Text(
+                        "hola",
+                        style: textStyle,
+                      )),
+                    )),
+                Container(
+                  margin: const EdgeInsets.only(top: 50, bottom: 30),
+                  child: const Text("Registro"),
+                ),
+                const Text("¿Olvidaste la contraseña?")
+              ],
             ),
-            const Text("Estamo en un login peich"),
-          ],
+          ),
         ),
         floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),

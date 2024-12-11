@@ -14,24 +14,25 @@ class ListaHorizontal extends StatelessWidget {
         body: Column(children: [
       Container(
           margin: const EdgeInsets.only(top: 100, left: 50, right: 100),
-          child: const Column(
-            children: [
-              Text("Best Iranian Actors and Actresses",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                      fontFamily: "Gilroy-Extra")),
-              Padding(
-                padding: EdgeInsets.only(right: 150, top: 8),
-                child: Text(
-                  "March 2020",
-                  style: TextStyle(color: Colors.black26),
-                  textAlign: TextAlign.left,
-                ),
-              )
-            ],
-          )),
+          child: const Column(children: [
+            Text("Best Iranian Actors and Actresses",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                    fontFamily: "Gilroy-Extra")),
+            Padding(
+              padding: EdgeInsets.only(right: 150, top: 8),
+              child: Text(
+                "March 2020",
+                style: TextStyle(color: Colors.black26),
+                textAlign: TextAlign.left,
+              ),
+            )
+          ])),
+      SizedBox(
+        child: ListView(),
+      )
     ]));
   }
 }

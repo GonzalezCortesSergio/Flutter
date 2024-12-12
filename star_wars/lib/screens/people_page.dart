@@ -99,15 +99,32 @@ class _PeoplePageState extends State<PeoplePage> {
                 elevation: 0,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                child: Center(
-                  child: Text(
-                    peopleResponse.results![index].name!.toLowerCase(),
-                    style: const TextStyle(
-                        color: Colors.amber,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "JediFont"),
-                  ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 120, bottom: 70),
+                      child: Text(
+                        peopleResponse.results![index].name!.toLowerCase(),
+                        style: const TextStyle(
+                            color: Colors.amber,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "JediFont"),
+                      ),
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text("birth year: ${peopleResponse.results![index].birthYear!}", 
+                        style: const TextStyle(color: Colors.amber, fontFamily:"JediFont" )),
+                        
+                        Text("gender: ${peopleResponse.results![index].gender!.toLowerCase()}", 
+                        style: const TextStyle(color: Colors.amber, fontFamily: "JediFont"))
+                      ],
+                      
+                    )
+                  ],
                 ),
               ));
         });

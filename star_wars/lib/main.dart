@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:star_wars/screens/people_page.dart';
+import 'package:star_wars/screens/people_sceen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'STAR WHAT?',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const PeoplePage(),
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.deepPurple, brightness: Brightness.dark),
+          useMaterial3: true),
+      home: const PeopleScreen(),
     );
   }
 }

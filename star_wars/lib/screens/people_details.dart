@@ -10,29 +10,95 @@ class PeopleDetails extends StatefulWidget {
 }
 
 class _PeopleDetailsState extends State<PeopleDetails> {
+
+  
   @override
   Widget build(BuildContext context) {
+    People character = widget.people;
     return Scaffold(
-      body: CustomScrollView(
-        physics: const BouncingScrollPhysics(),
-        slivers: <Widget>[
-          SliverAppBar(
-            expandedHeight: 200,
-            flexibleSpace: FlexibleSpaceBar(
-              title: Container(
-                alignment: Alignment.center,
-                child: Text(
-                  widget.people.name!.toLowerCase(),
-                  style: const TextStyle(
-                      color: Colors.amber, fontFamily: "JediFont"),
-                ),
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Container(
+          alignment: Alignment.center,
+          child: Text(character.name!.toLowerCase(),
+          style: const TextStyle(color: Colors.amber,
+          fontFamily: "JediFont")),
+        ),
+      ),
+      body: Column(
+        children: <Widget>[
+          SizedBox(
+            height: 300,
+            width: double.infinity,
+            child: Image.network("https://starwars-visualguide.com/assets/img/characters/${_searchIdByUrl(character.url!)}.jpg", fit: BoxFit.cover,)),
+            Column(
+              
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 50,bottom: 50),
+                        child: Text("birthyear: ${character.birthYear}", 
+                        style: const TextStyle(color: Colors.amber,
+                        fontFamily: "JediFont")),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 50,
+                        bottom: 50),
+                        child: Text("height: ${character.height!.toLowerCase()}cm",
+                        style: const TextStyle(
+                          color: Colors.amber, 
+                          fontFamily: "JediFont"
+                        ),),
+                      )
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 50),
+                        child: Text("mass: ${character.mass!}kg",
+                        style: const TextStyle(
+                          color: Colors.amber,
+                          fontFamily: "JediFont"
+                        ),),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 50),
+                        child: Text("gender: ${character.gender!.toLowerCase()}",
+                        style: const TextStyle(
+                          color: Colors.amber,
+                          fontFamily: "JediFont"
+                        ),),
+                      )
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 50),
+                        child: Text("hair color: ${character.hairColor!.toLowerCase()}",
+                        style: const TextStyle(
+                          color: Colors.amber,
+                          fontFamily: "JediFont"
+                        ),),
+                        ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 50),
+                        child: Text("skin color: ${character.skinColor!.toLowerCase()}",
+                        style: const TextStyle(
+                          color: Colors.amber,
+                          fontFamily: "JediFont",
+                        ),),
+                        )
+                    ],
+                  )
+                ],
               ),
-              background: Image(
-                  image: NetworkImage(
-                      "https://starwars-visualguide.com/assets/img/characters/${_searchIdByUrl(widget.people.url!)}.jpg"),
-                  fit: BoxFit.fill),
-            ),
-          )
         ],
       ),
     );

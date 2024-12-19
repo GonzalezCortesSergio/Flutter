@@ -17,7 +17,11 @@ class HomeScreen extends StatelessWidget {
     return http.get(Uri.parse("https://api.themoviedb.org/3/person/popular"),
         headers: {
           "Authorization":
+<<<<<<< HEAD
               "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNzMxNzJmOWIyZjVmODQzNzc4NDdjNWE5ZDc2ZDM3NSIsIm5iZiI6MTczMTQwNDkzNy4wMDMsInN1YiI6IjY3MzMyNDg4YmM3OGNlMmI5NGJhNTQ0MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OKBnkVMQf9PLv9iMaS0RUru3S-Lw0QELuobuMTW5zzc"
+=======
+              "Bearer "
+>>>>>>> 2ecf5b5141ed19bccc8e5848ec4f547dd3fc4204
         }) as Future<PeopleListResponse>;
   }
 }

@@ -30,8 +30,85 @@ class LoginGui extends StatelessWidget {
                     children: [
                       FilledButton(
                           onPressed: () => {},
+                          style: const ButtonStyle(
+                            backgroundColor: WidgetStatePropertyAll(Colors.white),
+                            fixedSize: WidgetStatePropertyAll(Size(250, 50))),
                           child:
-                              const Text("Maria caracola, yo te hago la ola"))
+                              const Text("Sign Up",
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 231, 44, 18),
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold
+                              ),))
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 30),
+                  child: Column(
+                    children: [
+                      const Text(
+                        "Already have a Path account?",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 251, 150, 127)
+                        )
+                      ),
+                      OutlinedButton(
+                        onPressed: () => {}, 
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          fixedSize: const Size(250, 50),
+                          side: const BorderSide(
+                            color: Color.fromARGB(255, 251, 150, 127)
+                          )
+                        ),
+                        child: const Text("Log In",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 251, 150, 127)
+                        ))
+                        
+                        )
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(
+                    top: 30
+                  ),
+                  child: const Column(
+                    children: [
+
+                      Text("By using Path, you agree to Path's",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 251, 150, 127)
+                      )),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Terms of Use ",
+                            style: TextStyle(
+                              color: Colors.white,
+                              decoration: TextDecoration.underline,
+                              decorationColor: Colors.white
+                            ),
+                          ),
+                          Text(
+                            "and ",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 251, 150, 127)
+                            ),
+                          ),
+                          Text(
+                            "Privacy Policy",
+                            style: TextStyle(
+                              color: Colors.white,
+                              decoration: TextDecoration.underline,
+                              decorationColor: Colors.white
+                            ),
+                          )
+                        ],
+                      )
                     ],
                   ),
                 )

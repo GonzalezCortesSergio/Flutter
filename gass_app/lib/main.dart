@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gass_app/screens/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +17,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyanAccent),
           useMaterial3: true,
         ),
-        home: const Placeholder());
+        home: const MainScreen());
   }
 }
